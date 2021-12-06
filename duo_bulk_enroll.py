@@ -23,14 +23,14 @@ def main():
 
     # read first Excel worksheet and put it into a list
     logins_list = []
-    sheet1 = workbook1['tc logins']
-    for cell1 in sheet1["C"]:
+    sheet1 = workbook1['unique users']
+    for cell1 in sheet1["A"]:
         logins_list.append(cell1.value)
     logins_list_sanitized = []
     a = add_names(logins_list, logins_list_sanitized)
     print(len(a))
 
-    # read second Excel worksheet and put it into a list
+    # read second Excel worksheet and put it into a list (not currently used)
     logins_list = []  # reset variable
     sheet2 = workbook1['win logins']
     for cell1 in sheet2["C"]:
@@ -39,7 +39,7 @@ def main():
     b = add_names(logins_list, logins_list_sanitized)
     print(len(b))
 
-    # remove duplicates from first and second worksheet
+    # remove duplicates from first and second worksheet (not currently used)
     c = add_names(a, b)
     print(len(c))
 
@@ -80,4 +80,3 @@ def write_to_file(list1, append):
 
 if __name__ == '__main__':
     main()
-
